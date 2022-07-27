@@ -1,0 +1,52 @@
+﻿@model E_Commerce_Project.Models.Cart
+
+@{
+    ViewData["Title"] = "AddToCart";
+}
+
+<h1>AddToCart</h1>
+
+<h4>Cart</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddToCart">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="ProdName" class="control-label"></label>
+                <input asp-for="ProdName" class="form-control" />
+                <span asp-validation-for="ProdName" class="text-danger"></span>
+            </div>*@
+           @* <div class="form-group">
+                <label asp-for="ProdPrice" class="control-label"></label>
+                <input asp-for="ProdPrice" class="form-control" />
+                <span asp-validation-for="ProdPrice" class="text-danger"></span>
+            </div>*@
+          @*  <div class="form-group">
+                <label asp-for="CartId" class="control-label"></label>
+                <input asp-for="CartId" class="form-control" />
+                <span asp-validation-for="CartId" class="text-danger"></span>
+            </div>*@
+
+             <div class="form-group">
+                <label asp-for="ProdId" class="control-label"></label>
+                <input asp-for="ProdId" class="form-control" />
+                <span asp-validation-for="ProdId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

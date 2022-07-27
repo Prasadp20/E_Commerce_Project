@@ -1,0 +1,65 @@
+﻿@model IEnumerable<E_Commerce_Project.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdCompanyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.ProdId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdCompanyName)
+            </td>
+            <td>
+              @* <input type="checkbox" name="AddtoCart" value="@item.ProdId"/>*@
+               @Html.ActionLink("Add To Cart","ViewInCart",new {id=item.ProdId})
+           </td>
+           @* <td>
+                @Html.ActionLink("Add to Cart", "AddToCart", new {  id=item.CartId  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.ProdId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.ProdId  })
+              </td>*@
+            
+            @*<div class="form-group">
+                <input type="submit" value="Add to Cart" class="btn btn-primary" />
+            </div>*@
+        </tr>
+}
+    </tbody>
+</table>
+
+@*<div>
+    <a asp-action="ViewInCart">View Your Cart</a>
+</div>*@
