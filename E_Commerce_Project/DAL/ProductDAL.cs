@@ -14,7 +14,7 @@ namespace E_Commerce_Project.DAL
         {
             con = new SqlConnection(Startup.ConnectionString);
         }
-        public List<Product> ProductsList()
+        public List<Product> ProductList()
         {
             List<Product> plist = new List<Product>();
             string qry = "select * from Product";
@@ -36,10 +36,5 @@ namespace E_Commerce_Project.DAL
             con.Close();
             return plist;
         }
-
-        //internal int RemoveProduct(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

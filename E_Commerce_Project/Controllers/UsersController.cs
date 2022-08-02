@@ -43,6 +43,8 @@ namespace E_Commerce_Project.Controllers
             Users user = db.UserLogin(users);
             if (user.Password == users.Password)
             {
+                TempData["userid"] = user.UserId;
+                TempData.Keep("userid");
                 HttpContext.Session.SetString("username", user.UserName);
                 HttpContext.Session.SetString("userid", user.UserId.ToString());
 
@@ -63,6 +65,13 @@ namespace E_Commerce_Project.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("SignIn");
         }
     }
 }

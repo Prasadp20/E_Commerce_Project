@@ -4,10 +4,10 @@
     ViewData["Title"] = "ViewProductInCart";
 }
 
-<h1>ViewProductInCart</h1>
+<h1>View Cart</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Index">Back to Shopping</a>
 </p>
 <table class="table">
     <thead>
@@ -51,7 +51,9 @@
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                @Html.ActionLink("Delete", "Delete", new {  id=item.CartId  })
+                @Html.ActionLink("Remove Product", "RemoveProduct", new {  Cartid=item.CartId  }) |
+                 @Html.ActionLink("Place Order", "ViewOrder", new {  Cartid=item.CartId }) 
+                @*@Html.ActionLink("Place Order", "RemoveProduct", new {  id=item.ProdId  })*@
             </td>
         </tr>
 }

@@ -7,7 +7,7 @@ namespace E_Commerce_Project.Models
     public class Users
     {
         [Key]
-        [ScaffoldColumn(false)]
+        //[ScaffoldColumn(false)]
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }

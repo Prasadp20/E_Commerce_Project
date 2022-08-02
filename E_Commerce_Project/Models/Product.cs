@@ -14,5 +14,6 @@ namespace E_Commerce_Project.Models
         public string ProdCompanyName { get; set; }
         public int CartId { get; internal set; }
         public int UserId { get; internal set; }
+        //public int OrderId { get; internal set; }
     }
 }
